@@ -13,7 +13,6 @@ export const AddCategory = ( props ) => {
   const onSubmit = (event) => {
     event.preventDefault();
     if( inputValue.trim().length <= 2 ) return;
-    // setCategories( (categories) => [inputValue, ...categories]); // callback to get categories
     onNewCategory( inputValue.trim() )
     setInputValue( '' )
   }

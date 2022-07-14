@@ -17,14 +17,15 @@ export const GifExpertApp = () => {
   const onAddCategory = (event) => {
     const newCategoryByInputUser = event.target.value;
     setCategories([newCategoryByInputUser, ...categories]);
-
   };
 
   
   return (
     <>
       <h1>GifExpertApp</h1>
-      < AddCategory />
+      <AddCategory  
+        setCategories={ setCategories } 
+      />
       <ol>
         {
           categories.map( category => {

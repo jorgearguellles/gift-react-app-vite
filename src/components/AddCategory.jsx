@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-export const AddCategory = () => {
+export const AddCategory = ( props ) => {
+  const { setCategories } = props;
 
   const [inputValue, setInputValue] = useState('');
 
@@ -11,14 +12,16 @@ export const AddCategory = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
+    if( inputValue.trim().length <= 3 ) return;
+    setCategories( (categories) => [inputValue, ...categories]); // callback to get categories
+    setInputValue( '' )
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={ onSubmit }>
       <input
         type='text' 
-        placeholder={'Find your favorite gif'} 
+        placeholder={ 'Find your favorite gif' } 
         value={ inputValue }
         onChange={ onInputChange }
       />

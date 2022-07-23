@@ -13,7 +13,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
 
-  const [categories, setCategories] = useState(['Pokemon', 'Batman']);
+  const [categories, setCategories] = useState(['Pokemon']);
 
   const onAddCategory = ( newCategoryByInputUser ) => {
     const categoriesLowerCase = categories.map( category => category.toLowerCase() );
